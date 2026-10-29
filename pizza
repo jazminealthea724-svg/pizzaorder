@@ -1,0 +1,43 @@
+import java.util.Scanner;
+public class Main {
+    static Scanner sc = new Scanner(System.in);
+    static void showHeader() {
+        System.out.println("========================================");
+        System.out.println("          PIZZA ORDERING SYSTEM");
+        System.out.println("========================================");
+        System.out.println("MENU:                     ");
+        System.out.println("----------------------------------------");
+        System.out.println("| 1. Pepperoni - P250                  |");
+        System.out.println("| 2. Hawaiian  - P230                  |");
+        System.out.println("| 3. Cheese    - P200                  |");
+        System.out.println("----------------------------------------");
+    }
+    static int getPrice(int choice) {
+        switch (choice) {
+            case 1:
+                return 250;
+            case 2:
+                return 230;
+            default:
+                return 200;
+        }
+    }
+    public static void main(String[] args) {
+        showHeader();
+
+        System.out.print("Choose your pizza: ");
+        int choice = sc.nextInt();
+
+        System.out.print("How many pizzas do you want? ");
+        int qty = sc.nextInt();
+
+        int total = getPrice(choice) * qty;
+
+        System.out.println();
+        System.out.println("========================================");
+        System.out.println("           ORDER SUMMARY");
+        System.out.println("----------------------------------------");
+        System.out.println("Total Amount: P" + total);
+        System.out.println("========================================");
+    }
+}
